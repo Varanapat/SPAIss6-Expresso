@@ -1,0 +1,222 @@
+Beginning AutoGluon training... Time limit = 7200s
+AutoGluon will save models to '/Users/moi/PROJECT/Expresso/outputs/autogluon_weighted_leakage_safe_horizon/model_split_horizon_long_1m_autogluon'
+=================== System Info ===================
+AutoGluon Version:  1.5.0
+Python Version:     3.12.4
+Operating System:   Darwin
+Platform Machine:   arm64
+Platform Version:   Darwin Kernel Version 24.3.0: Thu Jan  2 20:24:06 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8103
+CPU Count:          4
+Pytorch Version:    2.9.1
+CUDA Version:       CUDA is not available
+GPU Count:          WARNING: Exception was raised when calculating GPU count (AssertionError)
+Memory Avail:       1.46 GB / 8.00 GB (18.2%)
+Disk Space Avail:   34.55 GB / 228.27 GB (15.1%)
+===================================================
+Setting presets to: high_quality
+
+Fitting with arguments:
+{'enable_ensemble': True,
+ 'eval_metric': MAE,
+ 'freq': 'D',
+ 'hyperparameters': {'Chronos': {'ag_args': {'name_suffix': 'LongWithRegressor'},
+                                 'covariate_regressor': {'model_hyperparameters': {'iterations': 1500},
+                                                         'model_name': 'CAT'},
+                                 'model_path': 'bolt_small',
+                                 'target_scaler': 'standard'},
+                     'DirectTabular': {},
+                     'RecursiveTabular': {},
+                     'SeasonalNaive': {}},
+ 'known_covariates_names': ['day_of_week',
+                            'dow_num',
+                            'day_of_month',
+                            'week_of_month',
+                            'days_to_month_end',
+                            'month',
+                            'quarter',
+                            'is_weekend',
+                            'is_holiday',
+                            'is_pre_holiday',
+                            'is_post_holiday',
+                            'is_long_weekend_adjacent',
+                            'is_school_break',
+                            'is_payday',
+                            'is_rainy_season',
+                            'is_month_start',
+                            'is_month_end',
+                            'sin_doy',
+                            'cos_doy',
+                            'decision_dow_num',
+                            'decision_day_of_month',
+                            'decision_month',
+                            'decision_is_weekend',
+                            'decision_is_holiday',
+                            'decision_is_payday',
+                            'decision_is_school_break',
+                            'decision_is_rainy_season',
+                            'decision_sin_doy',
+                            'decision_cos_doy',
+                            'days_from_decision_to_forecast',
+                            'active_promo_products',
+                            'max_discount_pct',
+                            'mean_discount_pct',
+                            'email_sent',
+                            'social_campaign',
+                            'promo_type_count',
+                            'promo_channel_count',
+                            'promo_discount_intensity',
+                            'has_deep_discount',
+                            'kaggle_local_event_type_count',
+                            'kaggle_has_music_event',
+                            'kaggle_has_cultural_event',
+                            'kaggle_event_intensity_sum',
+                            'kaggle_event_intensity_max',
+                            'kaggle_local_event_count_lead1',
+                            'kaggle_days_until_local_event',
+                            'kaggle_event_store_relevance_max',
+                            'kaggle_event_relevance_score',
+                            'temperature_2m_mean',
+                            'temperature_2m_min',
+                            'is_any_salary_payday',
+                            'serve_type_temp_response_x_temperature_mean',
+                            'serve_type_positive_share_x_temperature_mean',
+                            'serve_type_negative_share_x_temperature_mean',
+                            'serve_type_temp_response_x_temperature_min',
+                            'serve_type_positive_share_x_temperature_min',
+                            'serve_type_negative_share_x_temperature_min',
+                            'hist_stockout_rate',
+                            'hist_stockout_sku_share',
+                            'hist_mean_closing_stock',
+                            'stockout_rate_7d',
+                            'stockout_rate_28d',
+                            'stockout_sku_share_7d',
+                            'stockout_sku_share_28d',
+                            'closing_stock_mean_7d',
+                            'closing_stock_mean_28d',
+                            'days_since_stockout',
+                            'days_since_open',
+                            'store_age_months',
+                            'is_new_store_90d',
+                            'punthai_outside_station_branches',
+                            'cafe_amazon_station_branch_index',
+                            'inthanin_pressure_score',
+                            'punthai_station_pressure_score',
+                            'amazon_station_market_anchor_score',
+                            'kaggle_event_type_book_fair',
+                            'kaggle_event_type_concert',
+                            'kaggle_event_type_food_festival',
+                            'kaggle_event_type_book_fair_category_score',
+                            'kaggle_event_type_cultural_category_score',
+                            'kaggle_event_type_food_festival_category_score',
+                            'kaggle_event_type_market_category_score',
+                            'kaggle_event_type_music_festival_category_score',
+                            'kaggle_event_type_sports_category_score',
+                            'kaggle_event_kw_coffee_category_score',
+                            'kaggle_event_kw_music_category_score',
+                            'kaggle_event_kw_student_category_score',
+                            'kaggle_event_kw_book_category_score',
+                            'kaggle_event_kw_auto_category_score',
+                            'kaggle_event_kw_religious_category_score',
+                            'kaggle_event_kw_night_category_score'],
+ 'num_val_windows': 2,
+ 'prediction_length': 61,
+ 'quantile_levels': [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
+ 'random_seed': 123,
+ 'refit_every_n_windows': 1,
+ 'refit_full': False,
+ 'skip_model_selection': False,
+ 'target': 'units_sold',
+ 'time_limit': 7200,
+ 'verbosity': 2}
+
+Provided train_data has 92694 rows, 140 time series. Median time series length is 670 (min=512, max=670). 
+
+Provided data contains following columns:
+	target: 'units_sold'
+	known_covariates:
+		categorical:        ['day_of_week']
+		continuous (float): ['dow_num', 'day_of_month', 'week_of_month', 'days_to_month_end', 'month', 'quarter', ...]
+	static_features:
+		categorical:        ['store_id', 'category', 'horizon', 'neighborhood_type']
+		continuous (float): ['horizon_days', 'has_drive_through', 'staff_count', 'open_hour', 'close_hour', 'operating_hours', ...]
+
+AutoGluon will ignore following non-numeric/non-informative columns:
+	ignored static_features: ['serve_type_piece_share', 'serve_type_temp_negative_share']
+
+To learn how to fix incorrectly inferred types, please see documentation for TimeSeriesPredictor.fit
+
+AutoGluon will gauge predictive performance using evaluation metric: 'MAE'
+	This metric's sign has been flipped to adhere to being higher_is_better. The metric score can be multiplied by -1 to get the metric value.
+===================================================
+
+Starting training. Start time is 2026-05-13 21:22:10
+Models that will be trained: ['SeasonalNaive', 'RecursiveTabular', 'DirectTabular', 'ChronosLongWithRegressor[bolt_small]']
+Training timeseries model SeasonalNaive. Training for up to 1649.9s of the 7199.7s of remaining time.
+	-14.5047      = Validation score (-MAE)
+	3.84    s     = Training runtime
+	0.08    s     = Validation (prediction) runtime
+Training timeseries model RecursiveTabular. Training for up to 2198.6s of the 7195.8s of remaining time.
+	Removed automatic date_features ['day_of_week', 'day_of_month'] since they clash with known_covariates
+	Removed automatic date_features ['day_of_week', 'day_of_month'] since they clash with known_covariates
+	-10.0434      = Validation score (-MAE)
+	13.12   s     = Training runtime
+	1.15    s     = Validation (prediction) runtime
+Training timeseries model DirectTabular. Training for up to 3290.7s of the 7181.5s of remaining time.
+	Removed automatic date_features ['day_of_week', 'day_of_month'] since they clash with known_covariates
+	Removed automatic date_features ['day_of_week', 'day_of_month'] since they clash with known_covariates
+	-8.0452       = Validation score (-MAE)
+	8.68    s     = Training runtime
+	1.00    s     = Validation (prediction) runtime
+Training timeseries model ChronosLongWithRegressor[bolt_small]. Training for up to 6571.8s of the 7171.8s of remaining time.
+	-7.7959       = Validation score (-MAE)
+	50.09   s     = Training runtime
+	2.90    s     = Validation (prediction) runtime
+Fitting 1 ensemble(s), in 1 layers.
+Training ensemble model WeightedEnsemble. Training for up to 7118.6s.
+	Ensemble weights: {'ChronosLongWithRegressor[bolt_small]': 0.7, 'DirectTabular': 0.3}
+	-7.7267       = Validation score (-MAE)
+	0.94    s     = Training runtime
+	3.90    s     = Validation (prediction) runtime
+Training complete. Models trained: ['SeasonalNaive', 'RecursiveTabular', 'DirectTabular', 'ChronosLongWithRegressor[bolt_small]', 'WeightedEnsemble']
+Total runtime: 82.34 s
+Best model: WeightedEnsemble
+Best model score: -7.7267
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Computing feature importance
+Computing feature importance

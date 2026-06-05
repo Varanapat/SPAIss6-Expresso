@@ -1,0 +1,8 @@
+category,serve_type_blended_product_share,serve_type_hot_product_share,serve_type_iced_product_share,serve_type_piece_product_share,serve_type_blended_product_count,serve_type_hot_product_count,serve_type_iced_product_count,serve_type_piece_product_count,serve_type_count,serve_type_temp_response_score,serve_type_temp_positive_share,serve_type_temp_negative_share,serve_type_piece_share
+Coffee,0.17647058823529413,0.4117647058823529,0.4117647058823529,0.0,3.0,7.0,7.0,0.0,3,0.10888235294117649,0.5882352941176471,0.4117647058823529,0.0
+Tea,0.2222222222222222,0.2222222222222222,0.5555555555555556,0.0,2.0,2.0,5.0,0.0,3,0.3646666666666667,0.7777777777777778,0.2222222222222222,0.0
+Bakery,0.0,0.0,0.0,1.0,0.0,0.0,0.0,7.0,1,0.025,0.0,0.0,1.0
+Savory Bakery,0.0,0.0,0.0,1.0,0.0,0.0,0.0,7.0,1,0.025,0.0,0.0,1.0
+Chocolate & Milk,0.375,0.25,0.375,0.0,3.0,2.0,3.0,0.0,3,0.3275,0.75,0.25,0.0
+Juice & Smoothie,0.8,0.0,0.2,0.0,4.0,0.0,1.0,0.0,2,0.6656000000000001,1.0,0.0,0.0
+Merchandise,0.0,0.0,0.0,1.0,0.0,0.0,0.0,7.0,1,0.025,0.0,0.0,1.0
